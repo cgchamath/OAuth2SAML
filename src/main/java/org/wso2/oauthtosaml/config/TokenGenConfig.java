@@ -60,16 +60,16 @@ public class TokenGenConfig {
             props.load(fileInputStream);
 
         } catch (FileNotFoundException e) {
-            log.error("Unable to find the configuration file : " + CONFIG_FILE);
+            log.error("Unable to find the configuration file : " + CONFIG_FILE, e);
         } catch (IOException e) {
-            log.error("Error reading the configuration file : " + CONFIG_FILE);
+            log.error("Error reading the configuration file : " + CONFIG_FILE, e);
         } finally {
             try {
                 if (fileInputStream != null) {
                     fileInputStream.close();
                 }
             } catch (IOException e) {
-                log.error("Error closing the configuration file : " + CONFIG_FILE);
+                log.error("Error closing the configuration file : " + CONFIG_FILE, e);
             }
         }
         
